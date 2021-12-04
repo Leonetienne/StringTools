@@ -17,6 +17,9 @@ public:
 	//! Will replace every occurence of `find` in `str` by `subst`.
 	static std::string Replace(const std::string& str, const std::string& find, const char subst);
 
+	//! Will make a string all-lowercase. Only works with latin and german umlautes, plus some extras.
+	static std::string Lower(const std::string& str);
+
 private:
 	// No instanciation! >:(
 	StringTools();

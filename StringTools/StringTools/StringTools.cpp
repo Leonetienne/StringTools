@@ -60,3 +60,39 @@ std::string StringTools::Replace(const std::string& str, const std::string& find
 
     return Replace(str, find, ss.str());
 }
+
+std::string StringTools::Lower(const std::string& str)
+{
+    std::stringstream ss;
+
+    for (std::size_t i = 0; i < str.size(); i++)
+    {
+        const char c = str[i];
+
+        // Quick-accept: regular letters
+        if ((c >= 'A') && (c <= 'Z'))
+            ss << (char)(c + 32);
+
+        // Damned umlautes:
+        else if (c == 'Ä') ss << 'ä';
+        else if (c == 'Á') ss << 'á';
+        else if (c == 'À') ss << 'à';
+        else if (c == 'Â') ss << 'â';
+        else if (c == 'É') ss << 'é';
+        else if (c == 'È') ss << 'è';
+        else if (c == 'Ê') ss << 'ê';
+        else if (c == 'Ü') ss << 'ü';
+        else if (c == 'Ú') ss << 'ú';
+        else if (c == 'Ù') ss << 'ù';
+        else if (c == 'Û') ss << 'û';
+        else if (c == 'Ö') ss << 'ö';
+        else if (c == 'Ó') ss << 'ó';
+        else if (c == 'Ò') ss << 'ò';
+        else if (c == 'Ô') ss << 'ô';
+
+        // Else: keep the character as is
+        else ss << c;
+    }
+
+    return ss.str();
+}

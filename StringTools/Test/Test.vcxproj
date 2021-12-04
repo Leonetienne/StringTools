@@ -162,6 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Lower.cpp" />
     <ClCompile Include="Replace_Char.cpp" />
     <ClCompile Include="Replace_String.cpp" />
   </ItemGroup>
