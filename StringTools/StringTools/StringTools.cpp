@@ -96,3 +96,39 @@ std::string StringTools::Lower(const std::string& str)
 
     return ss.str();
 }
+
+std::string StringTools::Upper(const std::string& str)
+{
+    std::stringstream ss;
+
+    for (std::size_t i = 0; i < str.size(); i++)
+    {
+        const char c = str[i];
+
+        // Quick-accept: regular letters
+        if ((c >= 'a') && (c <= 'z'))
+            ss << (char)(c - 32);
+
+        // Damned umlautes:
+        else if (c == 'ä') ss << 'Ä';
+        else if (c == 'á') ss << 'Á';
+        else if (c == 'à') ss << 'À';
+        else if (c == 'â') ss << 'Â';
+        else if (c == 'é') ss << 'É';
+        else if (c == 'è') ss << 'È';
+        else if (c == 'ê') ss << 'Ê';
+        else if (c == 'ü') ss << 'Ü';
+        else if (c == 'ú') ss << 'Ú';
+        else if (c == 'ù') ss << 'Ù';
+        else if (c == 'û') ss << 'Û';
+        else if (c == 'ö') ss << 'Ö';
+        else if (c == 'ó') ss << 'Ó';
+        else if (c == 'ò') ss << 'Ò';
+        else if (c == 'ô') ss << 'Ô';
+
+        // Else: keep the character as is
+        else ss << c;
+    }
+
+    return ss.str();
+}

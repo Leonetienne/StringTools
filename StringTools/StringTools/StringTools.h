@@ -20,6 +20,9 @@ public:
 	//! Will make a string all-lowercase. Only works with latin and german umlautes, plus some extras.
 	static std::string Lower(const std::string& str);
 
+	//! Will make a string all-uppercase. Only works with latin and german umlautes, plus some extras.
+	static std::string Upper(const std::string& str);
+
 private:
 	// No instanciation! >:(
 	StringTools();
