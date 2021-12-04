@@ -89,6 +89,9 @@ std::string StringTools::Lower(const std::string& str)
         else if (c == 'Ó') ss << 'ó';
         else if (c == 'Ò') ss << 'ò';
         else if (c == 'Ô') ss << 'ô';
+        else if (c == 'Í') ss << 'í';
+        else if (c == 'Ì') ss << 'ì';
+        else if (c == 'Î') ss << 'î';
 
         // Else: keep the character as is
         else ss << c;
@@ -125,6 +128,9 @@ std::string StringTools::Upper(const std::string& str)
         else if (c == 'ó') ss << 'Ó';
         else if (c == 'ò') ss << 'Ò';
         else if (c == 'ô') ss << 'Ô';
+        else if (c == 'í') ss << 'Í';
+        else if (c == 'ì') ss << 'Ì';
+        else if (c == 'î') ss << 'Î';
 
         // Else: keep the character as is
         else ss << c;

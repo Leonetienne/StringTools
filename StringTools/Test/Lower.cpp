@@ -183,17 +183,43 @@ namespace _StringTools
 			Assert::AreEqual("öóòô", out.c_str());
 		}
 
-		// Tests that lowering a string of uppercase, lowercase letters and symbols returns the lowercase version, even with umlauts
-		TEST_METHOD(Mixed_with_umlautes)
+		// Tests that lowering already lowered umlautes returns itself
+		TEST_METHOD(Umlautes_already_lower_i)
 		{
 			// Setup
-			const std::string in = "Ügh, Àrä Yóü Seriöûs?! DÓN'T DÒ THÄT!!!";
+			const std::string in = "íìî";
 
 			// Exercise
 			const std::string out = StringTools::Lower(in);
 
 			// Verify
-			Assert::AreEqual("ügh, àrä yóü seriöûs?! dón't dò thät!!!", out.c_str());
+			Assert::AreEqual("íìî", out.c_str());
+		}
+
+		// Tests that lowering uppercase umlautes returns the lowered umlautes
+		TEST_METHOD(Umlautes_upper_i)
+		{
+			// Setup
+			const std::string in = "ÍÌÎ";
+
+			// Exercise
+			const std::string out = StringTools::Lower(in);
+
+			// Verify
+			Assert::AreEqual("íìî", out.c_str());
+		}
+
+		// Tests that lowering a string of uppercase, lowercase letters and symbols returns the lowercase version, even with umlauts
+		TEST_METHOD(Mixed_with_umlautes)
+		{
+			// Setup
+			const std::string in = "Ügh, Àrä Yóü Serîöûs?! DÓN'T DÒ THÄT!!!";
+
+			// Exercise
+			const std::string out = StringTools::Lower(in);
+
+			// Verify
+			Assert::AreEqual("ügh, àrä yóü serîöûs?! dón't dò thät!!!", out.c_str());
 			return;
 		}
 	};
