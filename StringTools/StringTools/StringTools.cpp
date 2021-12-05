@@ -71,7 +71,7 @@ std::string StringTools::Lower(const std::string& str)
 
         // Quick-accept: regular letters
         if ((c >= 'A') && (c <= 'Z'))
-            ss << (char)(c + 32);
+            ss << (char)(c | 32);
 
         // Damned umlautes:
         else if (c == 'Ä') ss << 'ä';
@@ -110,7 +110,7 @@ std::string StringTools::Upper(const std::string& str)
 
         // Quick-accept: regular letters
         if ((c >= 'a') && (c <= 'z'))
-            ss << (char)(c - 32);
+            ss << (char)(c & ~32);
 
         // Damned umlautes:
         else if (c == 'ä') ss << 'Ä';
