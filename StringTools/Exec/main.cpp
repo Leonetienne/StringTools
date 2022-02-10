@@ -1,6 +1,9 @@
 #include <iostream>
+#include <StringTools/StringTools.h>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << StringTools::Replace("Hello, ${where}!\n", "${where}", "World") << std::endl;
+
+    return 0;
 }
