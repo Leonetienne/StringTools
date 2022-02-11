@@ -2,7 +2,7 @@
 #include "Catch2.h"
 
 // Tests that replacing something in an empty string returns an empty string
-TEST_CASE(__FILE__"/EmptyString")
+TEST_CASE(__FILE__"/EmptyString", "[ReplaceString]")
 {
     // Setup
     const std::string in = "";
@@ -16,7 +16,7 @@ TEST_CASE(__FILE__"/EmptyString")
 }
 
 // Tests that replacing a string to an empty string works
-TEST_CASE(__FILE__"/Single_ReplaceToEmpty")
+TEST_CASE(__FILE__"/Single_ReplaceToEmpty", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Squarepants";
@@ -30,7 +30,7 @@ TEST_CASE(__FILE__"/Single_ReplaceToEmpty")
 }
 
 // Tests that replacing to a single char works
-TEST_CASE(__FILE__"/Single_ReplaceToSingleChar")
+TEST_CASE(__FILE__"/Single_ReplaceToSingleChar", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Squarepants";
@@ -44,7 +44,7 @@ TEST_CASE(__FILE__"/Single_ReplaceToSingleChar")
 }
 
 // Tests that replacing to a single char works, passing a char
-TEST_CASE(__FILE__"/Single_ReplaceToSingleChar_AsChar")
+TEST_CASE(__FILE__"/Single_ReplaceToSingleChar_AsChar", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Oilbanger";
@@ -58,7 +58,7 @@ TEST_CASE(__FILE__"/Single_ReplaceToSingleChar_AsChar")
 }
 
 // Tests that replacing the find to something longer works
-TEST_CASE(__FILE__"/Single_ReplaceToLonger")
+TEST_CASE(__FILE__"/Single_ReplaceToLonger", "[ReplaceString]")
 {
     // Setup
     const std::string in = "LittleDong";
@@ -72,7 +72,7 @@ TEST_CASE(__FILE__"/Single_ReplaceToLonger")
 }
 
 // Tests that replacing a string to an empty string works
-TEST_CASE(__FILE__"/Multiple_ReplaceToEmpty")
+TEST_CASE(__FILE__"/Multiple_ReplaceToEmpty", "[ReplaceString]")
 {
     // Setup
     const std::string in = "The fucking dogs are fucking eating the fucking chicken.";
@@ -86,7 +86,7 @@ TEST_CASE(__FILE__"/Multiple_ReplaceToEmpty")
 }
 
 // Tests that replacing to a single char works
-TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar")
+TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
@@ -100,7 +100,7 @@ TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar")
 }
 
 // Tests that replacing to a single char works, passing a char
-TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar_AsChar")
+TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar_AsChar", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
@@ -114,7 +114,7 @@ TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar_AsChar")
 }
 
 // Tests that replacing the find to something longer works
-TEST_CASE(__FILE__"/Multiple_ReplaceToLonger")
+TEST_CASE(__FILE__"/Multiple_ReplaceToLonger", "[ReplaceString]")
 {
     // Setup
     const std::string in = "honk honk honk honk honk honk honk honk";
@@ -128,7 +128,7 @@ TEST_CASE(__FILE__"/Multiple_ReplaceToLonger")
 }
 
 // Tests that the replacer ignores chars put in by the replacer
-TEST_CASE(__FILE__"/ReplacerIgnoresReplaced")
+TEST_CASE(__FILE__"/ReplacerIgnoresReplaced", "[ReplaceString]")
 {
     // Setup
     const std::string in = "honk honk honk honk honk honk honk honk";
@@ -142,7 +142,7 @@ TEST_CASE(__FILE__"/ReplacerIgnoresReplaced")
 }
 
 // Tests that replacing successive findings works
-TEST_CASE(__FILE__"/Replace_Successive")
+TEST_CASE(__FILE__"/Replace_Successive", "[ReplaceString]")
 {
     // Setup
     const std::string in = "honkhonkhonkhonkhonkhonkhonkhonk";
@@ -156,7 +156,7 @@ TEST_CASE(__FILE__"/Replace_Successive")
 }
 
 // Tests that if find.length() == 0, it returns just the input
-TEST_CASE(__FILE__"/Find_Length0_Returns_Input")
+TEST_CASE(__FILE__"/Find_Length0_Returns_Input", "[ReplaceString]")
 {
     // Setup
     const std::string in = "Littled";

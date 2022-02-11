@@ -2,7 +2,7 @@
 #include "Catch2.h"
 
 // Tests that uppering an empty string returns an empty string
-TEST_CASE(__FILE__"/EmptyString", "[UPPER]")
+TEST_CASE(__FILE__"/EmptyString", "[Upper]")
 {
     // Setup
     const std::string in = "";
@@ -16,7 +16,7 @@ TEST_CASE(__FILE__"/EmptyString", "[UPPER]")
 }
 
 // Tests that uppering a string without any letters returns itself
-TEST_CASE(__FILE__"/Symbols", "[UPPER]")
+TEST_CASE(__FILE__"/Symbols", "[Upper]")
 {
     // Setup
     const std::string in = "66! _-\n*";
@@ -30,7 +30,7 @@ TEST_CASE(__FILE__"/Symbols", "[UPPER]")
 }
 
 // Tests that uppering a string of uppercase letters returns itself
-TEST_CASE(__FILE__"/AlreadyUppered", "[UPPER]")
+TEST_CASE(__FILE__"/AlreadyUppered", "[Upper]")
 {
     // Setup
     const std::string in = "UGHAREYOUSERIOUS";
@@ -44,7 +44,7 @@ TEST_CASE(__FILE__"/AlreadyUppered", "[UPPER]")
 }
 
 // Tests that uppering a string of lowercase letters returns the uppercase version
-TEST_CASE(__FILE__"/Lowercase", "[UPPER]")
+TEST_CASE(__FILE__"/Lowercase", "[Upper]")
 {
     // Setup
     const std::string in = "ughareyouserious";
@@ -58,7 +58,7 @@ TEST_CASE(__FILE__"/Lowercase", "[UPPER]")
 }
 
 // Tests that uppering a string of uppercase, lowercase letters and symbols returns the uppercase version
-TEST_CASE(__FILE__"/Mixed", "[UPPER]")
+TEST_CASE(__FILE__"/Mixed", "[Upper]")
 {
     // Setup
     const std::string in = "Ugh, Are You Serious?! DON'T do that!!!";
