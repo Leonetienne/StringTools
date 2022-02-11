@@ -73,27 +73,7 @@ std::string StringTools::Lower(const std::string& str)
         if ((c >= 'A') && (c <= 'Z'))
             ss << (char)(c | 32);
 
-        // Damned umlautes:
-        else if (c == 'Ä') ss << 'ä';
-        else if (c == 'Á') ss << 'á';
-        else if (c == 'À') ss << 'à';
-        else if (c == 'Â') ss << 'â';
-        else if (c == 'É') ss << 'é';
-        else if (c == 'È') ss << 'è';
-        else if (c == 'Ê') ss << 'ê';
-        else if (c == 'Ü') ss << 'ü';
-        else if (c == 'Ú') ss << 'ú';
-        else if (c == 'Ù') ss << 'ù';
-        else if (c == 'Û') ss << 'û';
-        else if (c == 'Ö') ss << 'ö';
-        else if (c == 'Ó') ss << 'ó';
-        else if (c == 'Ò') ss << 'ò';
-        else if (c == 'Ô') ss << 'ô';
-        else if (c == 'Í') ss << 'í';
-        else if (c == 'Ì') ss << 'ì';
-        else if (c == 'Î') ss << 'î';
-
-        // Else: keep the character as is
+            // Else: keep the character as is
         else ss << c;
     }
 
@@ -112,27 +92,7 @@ std::string StringTools::Upper(const std::string& str)
         if ((c >= 'a') && (c <= 'z'))
             ss << (char)(c & ~32);
 
-        // Damned umlautes:
-        else if (c == 'ä') ss << 'Ä';
-        else if (c == 'á') ss << 'Á';
-        else if (c == 'à') ss << 'À';
-        else if (c == 'â') ss << 'Â';
-        else if (c == 'é') ss << 'É';
-        else if (c == 'è') ss << 'È';
-        else if (c == 'ê') ss << 'Ê';
-        else if (c == 'ü') ss << 'Ü';
-        else if (c == 'ú') ss << 'Ú';
-        else if (c == 'ù') ss << 'Ù';
-        else if (c == 'û') ss << 'Û';
-        else if (c == 'ö') ss << 'Ö';
-        else if (c == 'ó') ss << 'Ó';
-        else if (c == 'ò') ss << 'Ò';
-        else if (c == 'ô') ss << 'Ô';
-        else if (c == 'í') ss << 'Í';
-        else if (c == 'ì') ss << 'Ì';
-        else if (c == 'î') ss << 'Î';
-
-        // Else: keep the character as is
+            // Else: keep the character as is
         else ss << c;
     }
 
