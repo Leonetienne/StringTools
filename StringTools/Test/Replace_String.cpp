@@ -1,180 +1,170 @@
-#include "CppUnitTest.h"
-#include "../StringTools/StringTools.h"
+#include <StringTools/StringTools.h>
+#include "Catch2.h"
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
-namespace _StringTools
+// Tests that replacing something in an empty string returns an empty string
+TEST_CASE(__FILE__"/EmptyString")
 {
-	TEST_CLASS(_Replace_String)
-	{
-	public:
+    // Setup
+    const std::string in = "";
 
-		// Tests that replacing something in an empty string returns an empty string
-		TEST_METHOD(EmptyString)
-		{
-			// Setup
-			const std::string in = "";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "burger", "Subst");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "burger", "Subst");
+    // Verify
+    REQUIRE(out == "");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "");
-			return;
-		}
+// Tests that replacing a string to an empty string works
+TEST_CASE(__FILE__"/Single_ReplaceToEmpty")
+{
+    // Setup
+    const std::string in = "Squarepants";
 
-		// Tests that replacing a string to an empty string works
-		TEST_METHOD(Single_ReplaceToEmpty)
-		{
-			// Setup
-			const std::string in = "Squarepants";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "Squarepants", "");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "Squarepants", "");
+    // Verify
+    REQUIRE(out == "");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "");
-			return;
-		}
+// Tests that replacing to a single char works
+TEST_CASE(__FILE__"/Single_ReplaceToSingleChar")
+{
+    // Setup
+    const std::string in = "Squarepants";
 
-		// Tests that replacing to a single char works
-		TEST_METHOD(Single_ReplaceToSingleChar)
-		{
-			// Setup
-			const std::string in = "Squarepants";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "Squarepants", "i");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "Squarepants", "i");
+    // Verify
+    REQUIRE(out == "i");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "i");
-			return;
-		}
+// Tests that replacing to a single char works, passing a char
+TEST_CASE(__FILE__"/Single_ReplaceToSingleChar_AsChar")
+{
+    // Setup
+    const std::string in = "Oilbanger";
 
-		// Tests that replacing to a single char works, passing a char
-		TEST_METHOD(Single_ReplaceToSingleChar_AsChar)
-		{
-			// Setup
-			const std::string in = "Oilbanger";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "Oilbanger", 'i');
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "Oilbanger", 'i');
+    // Verify
+    REQUIRE(out == "i");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "i");
-			return;
-		}
+// Tests that replacing the find to something longer works
+TEST_CASE(__FILE__"/Single_ReplaceToLonger")
+{
+    // Setup
+    const std::string in = "LittleDong";
 
-		// Tests that replacing the find to something longer works
-		TEST_METHOD(Single_ReplaceToLonger)
-		{
-			// Setup
-			const std::string in = "LittleDong";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "Dong", "Binger");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "Dong", "Binger");
+    // Verify
+    REQUIRE(out == "LittleBinger");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "LittleBinger");
-			return;
-		}
+// Tests that replacing a string to an empty string works
+TEST_CASE(__FILE__"/Multiple_ReplaceToEmpty")
+{
+    // Setup
+    const std::string in = "The fucking dogs are fucking eating the fucking chicken.";
 
-		// Tests that replacing a string to an empty string works
-		TEST_METHOD(Multiple_ReplaceToEmpty)
-		{
-			// Setup
-			const std::string in = "The fucking dogs are fucking eating the fucking chicken.";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "fucking ", "");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "fucking ", "");
+    // Verify
+    REQUIRE(out == "The dogs are eating the chicken.");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "The dogs are eating the chicken.");
-			return;
-		}
+// Tests that replacing to a single char works
+TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar")
+{
+    // Setup
+    const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
 
-		// Tests that replacing to a single char works
-		TEST_METHOD(Multiple_ReplaceToSingleChar)
-		{
-			// Setup
-			const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "smeary", "i");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "smeary", "i");
+    // Verify
+    REQUIRE(out == "Oilbinger, Bingerfinger, Little brittle oily skittle.");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "Oilbinger, Bingerfinger, Little brittle oily skittle.");
-			return;
-		}
+// Tests that replacing to a single char works, passing a char
+TEST_CASE(__FILE__"/Multiple_ReplaceToSingleChar_AsChar")
+{
+    // Setup
+    const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
 
-		// Tests that replacing to a single char works, passing a char
-		TEST_METHOD(Multiple_ReplaceToSingleChar_AsChar)
-		{
-			// Setup
-			const std::string in = "Oilbsmearynger, Bsmearyngerfsmearynger, Lsmearyttle brsmearyttle osmearyly sksmearyttle.";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "smeary", 'i');
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "smeary", 'i');
+    // Verify
+    REQUIRE(out == "Oilbinger, Bingerfinger, Little brittle oily skittle.");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "Oilbinger, Bingerfinger, Little brittle oily skittle.");
-			return;
-		}
+// Tests that replacing the find to something longer works
+TEST_CASE(__FILE__"/Multiple_ReplaceToLonger")
+{
+    // Setup
+    const std::string in = "honk honk honk honk honk honk honk honk";
 
-		// Tests that replacing the find to something longer works
-		TEST_METHOD(Multiple_ReplaceToLonger)
-		{
-			// Setup
-			const std::string in = "honk honk honk honk honk honk honk honk";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "honk", "hallery");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "honk", "hallery");
+    // Verify
+    REQUIRE(out == "hallery hallery hallery hallery hallery hallery hallery hallery");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "hallery hallery hallery hallery hallery hallery hallery hallery");
-			return;
-		}
+// Tests that the replacer ignores chars put in by the replacer
+TEST_CASE(__FILE__"/ReplacerIgnoresReplaced")
+{
+    // Setup
+    const std::string in = "honk honk honk honk honk honk honk honk";
 
-		// Tests that the replacer ignores chars put in by the replacer
-		TEST_METHOD(ReplacerIgnoresReplaced)
-		{
-			// Setup
-			const std::string in = "honk honk honk honk honk honk honk honk";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "honk", "honka");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "honk", "honka");
+    // Verify
+    REQUIRE(out == "honka honka honka honka honka honka honka honka");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "honka honka honka honka honka honka honka honka");
-			return;
-		}
+// Tests that replacing successive findings works
+TEST_CASE(__FILE__"/Replace_Successive")
+{
+    // Setup
+    const std::string in = "honkhonkhonkhonkhonkhonkhonkhonk";
 
-		// Tests that replacing succesive findings works
-		TEST_METHOD(Replace_Successive)
-		{
-			// Setup
-			const std::string in = "honkhonkhonkhonkhonkhonkhonkhonk";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "honk", "hallery");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "honk", "hallery");
+    // Verify
+    REQUIRE(out == "halleryhalleryhalleryhalleryhalleryhalleryhalleryhallery");
+    return;
+}
 
-			// Verify
-			Assert::AreEqual(out.c_str(), "halleryhalleryhalleryhalleryhalleryhalleryhalleryhallery");
-			return;
-		}
+// Tests that if find.length() == 0, it returns just the input
+TEST_CASE(__FILE__"/Find_Length0_Returns_Input")
+{
+    // Setup
+    const std::string in = "Littled";
 
-		// Tests that if find.length() == 0, it returns just the input
-		TEST_METHOD(Find_Length0_Returns_Input)
-		{
-			// Setup
-			const std::string in = "Littled";
+    // Exercise
+    const std::string out = StringTools::Replace(in, "", "binger");
 
-			// Exercise
-			const std::string out = StringTools::Replace(in, "", "binger");
-
-				// Verify
-				Assert::AreEqual(out.c_str(), "Littled");
-			return;
-		}
-	};
+        // Verify
+        REQUIRE(out == "Littled");
+    return;
 }
