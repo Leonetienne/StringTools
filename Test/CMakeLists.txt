@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
-project(Tests)
+project(Test)
 
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(../Src)
 link_directories(../Src/cmake-build-debug)
 
-add_executable(Tests
+add_executable(Test
         Catch2.h
         main.cpp
         Lower.cpp
@@ -15,4 +15,4 @@ add_executable(Tests
         Replace_String.cpp
 )
 
-target_link_libraries(Tests StringTools)
+target_link_libraries(Test StringTools)
