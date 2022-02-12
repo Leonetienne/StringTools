@@ -1,4 +1,4 @@
-#include <StringTools/StringTools.h>
+#include <StringTools.h>
 #include "Catch2.h"
 
 // Tests that replacing something in an empty string returns an empty string

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <StringTools/StringTools.h>
+#include <StringTools.h>
 
 int main()
 {

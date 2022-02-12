@@ -3,8 +3,8 @@ project(Exec)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(..)
-link_directories(../StringTools/cmake-build-debug)
+include_directories(../Src)
+link_directories(../Src/cmake-build-debug)
 
 add_executable(Exec main.cpp)
-target_link_libraries(Exec Stringtools)
+target_link_libraries(Exec StringTools)
