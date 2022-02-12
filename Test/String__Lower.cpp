@@ -2,7 +2,7 @@
 #include "Catch2.h"
 
 // Tests that lowering an empty string returns an empty string
-TEST_CASE(__FILE__"/EmptyString", "[Lower]")
+TEST_CASE(__FILE__"/EmptyString", "[Strings][Lower]")
 {
     // Setup
     const std::string in = "";
@@ -16,7 +16,7 @@ TEST_CASE(__FILE__"/EmptyString", "[Lower]")
 }
 
 // Tests that lowering a string without any letters returns itself
-TEST_CASE(__FILE__"/Symbols", "[Lower]")
+TEST_CASE(__FILE__"/Symbols", "[Strings][Lower]")
 {
     // Setup
     const std::string in = "66! _-\n*";
@@ -30,7 +30,7 @@ TEST_CASE(__FILE__"/Symbols", "[Lower]")
 }
 
 // Tests that lowering a string of lowercase letters returns itself
-TEST_CASE(__FILE__"/AlreadyLowered", "[Lower]")
+TEST_CASE(__FILE__"/AlreadyLowered", "[Strings][Lower]")
 {
     // Setup
     const std::string in = "ughareyouserious";
@@ -44,7 +44,7 @@ TEST_CASE(__FILE__"/AlreadyLowered", "[Lower]")
 }
 
 // Tests that lowering a string of uppercase letters returns the lowercase version
-TEST_CASE(__FILE__"/Uppercase", "[Lower]")
+TEST_CASE(__FILE__"/Uppercase", "[Strings][Lower]")
 {
     // Setup
     const std::string in = "UGHAREYOUSERIOUS";
@@ -58,7 +58,7 @@ TEST_CASE(__FILE__"/Uppercase", "[Lower]")
 }
 
 // Tests that lowering a string of uppercase, lowercase letters and symbols returns the lowercase version
-TEST_CASE(__FILE__"/Mixed", "[Lower]")
+TEST_CASE(__FILE__"/Mixed", "[Strings][Lower]")
 {
     // Setup
     const std::string in = "Ugh, Are You Serious?! DON'T DO THAT!!!";

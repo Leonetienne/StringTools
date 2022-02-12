@@ -2,11 +2,13 @@
 #include <algorithm>
 
 bool CharTools::IsVowel(const char c, const std::string &vowels) {
+    const char lc = MakeLower(c);
+
     return std::any_of(
             vowels.cbegin(),
             vowels.cend(),
-            [c](const char vowel) {
-                return c == vowel;
+            [lc](const char vowel) {
+                return lc == vowel;
             }
     );
 }
@@ -18,19 +20,28 @@ bool CharTools::IsLetter(const char c) {
     return (lowercase_c >= 'a') && (lowercase_c <= 'z');
 }
 
-bool CharTools::IsGeneric(const char c) {
-    return (c == UPPERCASE) || (c == LOWERCASE);
+bool CharTools::IsDigit(const char c) {
+    return (c >= '0') && (c <= '9');
 }
 
 bool CharTools::IsUpper(const char c) {
-    if ((!IsLetter(c)) && (!IsGeneric(c)))
+    if (!IsLetter(c))
         return false;
     else
         return !(c & (1<<5));
 }
 
+bool CharTools::IsLower(const char c) {
+    // Can't just return !IsUpper(c), because it should still return false for digits and symbols...
+
+    if (!IsLetter(c))
+        return false;
+    else
+        return (c & (1<<5));
+}
+
 char CharTools::MakeUpper(char c) {
-    if ((!IsLetter(c)) && (!IsGeneric(c)))
+    if (!IsLetter(c))
         return c;
     else if (IsUpper(c))
         return c;
@@ -39,7 +50,7 @@ char CharTools::MakeUpper(char c) {
 }
 
 char CharTools::MakeLower(char c) {
-    if ((!IsLetter(c)) && (!IsGeneric(c)))
+    if (!IsLetter(c))
         return c;
     else if (!IsUpper(c))
         return c;
@@ -47,15 +58,8 @@ char CharTools::MakeLower(char c) {
         return c | (1<<5);
 }
 
-char CharTools::GetSign(char c) {
-    if (IsUpper(c))
-        return UPPERCASE;
-    else
-        return LOWERCASE;
-}
-
 char CharTools::CopySign(char sign, char c) {
-    if ((!IsLetter(c)) && (!IsGeneric(c)))
+    if ((!IsLetter(c)) || (!IsLetter(sign)))
         return c;
     if (IsUpper(sign))
         return MakeUpper(c);
