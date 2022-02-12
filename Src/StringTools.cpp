@@ -1,8 +1,7 @@
 #include "StringTools.h"
 #include <sstream>
 
-std::string StringTools::Replace(const std::string& str, const char find, const std::string& subst)
-{
+std::string StringTools::Replace(const std::string& str, const char find, const std::string& subst) {
     std::stringstream ss;
 
     for (std::size_t i = 0; i < str.length(); i++)
@@ -16,8 +15,7 @@ std::string StringTools::Replace(const std::string& str, const char find, const 
     return ss.str();
 }
 
-std::string StringTools::Replace(const std::string& str, const std::string& find, const std::string& subst)
-{
+std::string StringTools::Replace(const std::string& str, const std::string& find, const std::string& subst) {
     if (find.length() == 0)
         return str;
 
@@ -45,24 +43,21 @@ std::string StringTools::Replace(const std::string& str, const std::string& find
     return ss.str();
 }
 
-std::string StringTools::Replace(const std::string& str, const char find, const char subst)
-{
+std::string StringTools::Replace(const std::string& str, const char find, const char subst) {
     std::stringstream ss;
     ss << subst;
 
     return Replace(str, find, ss.str());
 }
 
-std::string StringTools::Replace(const std::string& str, const std::string& find, const char subst)
-{
+std::string StringTools::Replace(const std::string& str, const std::string& find, const char subst) {
     std::stringstream ss;
     ss << subst;
 
     return Replace(str, find, ss.str());
 }
 
-std::string StringTools::Lower(const std::string& str)
-{
+std::string StringTools::Lower(const std::string& str) {
     std::stringstream ss;
 
     for (std::size_t i = 0; i < str.size(); i++)
@@ -80,8 +75,7 @@ std::string StringTools::Lower(const std::string& str)
     return ss.str();
 }
 
-std::string StringTools::Upper(const std::string& str)
-{
+std::string StringTools::Upper(const std::string& str) {
     std::stringstream ss;
 
     for (std::size_t i = 0; i < str.size(); i++)

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef STRINGTOOLS_STRINGTOOLS_H
+#define STRINGTOOLS_STRINGTOOLS_H
+
 #include <string>
 
 /* Handy utensils to manipulate strings */
@@ -17,13 +19,15 @@ public:
 	//! Will replace every occurence of `find` in `str` by `subst`.
 	static std::string Replace(const std::string& str, const std::string& find, const char subst);
 
-	//! Will make a string all-lowercase. Only works with latin and german umlautes, plus some extras.
+	//! Will make a string all-lowercase.
 	static std::string Lower(const std::string& str);
 
-	//! Will make a string all-uppercase. Only works with latin and german umlautes, plus some extras.
+	//! Will make a string all-uppercase.
 	static std::string Upper(const std::string& str);
 
 private:
 	// No instanciation! >:(
 	StringTools();
 };
+
+#endif //STRINGTOOLS_STRINGTOOLS_H
