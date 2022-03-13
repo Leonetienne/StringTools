@@ -15,6 +15,7 @@ add_executable(Test
         String__Upper.cpp
         String__Replace_Char.cpp
         String__Replace_String.cpp
+        String__Split.cpp
 
         # CharTools-Tests
         Char__IsVowel.cpp

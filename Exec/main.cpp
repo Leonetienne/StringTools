@@ -4,7 +4,7 @@
 int main()
 {
     std::vector<std::string> foo =
-      StringTools::Split("Hello, lol, test", ", ");
+      StringTools::Split(",,Hello,,lol,,test,,", ",,");
 
     for (const auto& it : foo)
       std::cout << "'" << it << "'" << std::endl;
