@@ -4,7 +4,11 @@ project(Exec)
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(../Src)
-link_directories(../Src/cmake-build-debug)
 
-add_executable(Exec main.cpp)
-target_link_libraries(Exec StringTools)
+FILE(GLOB StringTools ../Src/*.cpp)
+
+add_executable(Exec
+    ${StringTools}
+
+    main.cpp
+)

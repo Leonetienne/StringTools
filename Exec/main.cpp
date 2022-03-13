@@ -3,7 +3,11 @@
 
 int main()
 {
-    std::cout << StringTools::Replace("Hello, ${where}!\n", "${where}", "World") << std::endl;
+    std::vector<std::string> foo =
+      StringTools::Split("Hello, lol, test", ", ");
+
+    for (const auto& it : foo)
+      std::cout << "'" << it << "'" << std::endl;
 
     return 0;
 }

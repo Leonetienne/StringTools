@@ -92,3 +92,31 @@ std::string StringTools::Upper(const std::string& str) {
 
     return ss.str();
 }
+
+std::vector<std::string> StringTools::Split(const std::string& str, const std::string& seperator) {
+  std::vector<std::string> toRet;
+
+    // Quick-accept: seperator length is 0
+    if (seperator.length() == 0) {
+      for (const char c : str)
+        toRet.push_back(std::string(&c, (&c) + 1));
+    }
+
+    else {
+      std::size_t idx = 0;
+      while (idx != std::string::npos) {
+        std::size_t lastIdx = idx;
+        idx = str.find(seperator, idx + seperator.length());
+
+        toRet.push_back(str.substr(
+          lastIdx,
+          idx - lastIdx
+        ));
+
+        if (idx != std::string::npos)
+          idx += seperator.length();
+      }
+    }
+
+    return toRet;
+}
