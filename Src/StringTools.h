@@ -29,6 +29,12 @@ public:
   //! Will split a string by a string seperator
   static std::vector<std::string> Split(const std::string& str, const std::string& seperator);
 
+  //! Will pad a string to the left to length l 
+  static std::string PadLeft(const std::string& str, const char pad, const std::size_t len);
+
+  //! Will pad a string to the right to length l 
+  static std::string PadRight(const std::string& str, const char pad, const std::size_t len);
+
 private:
   // No instanciation! >:(
   StringTools();

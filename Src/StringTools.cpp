@@ -95,7 +95,6 @@ std::string StringTools::Upper(const std::string& str) {
 
 std::vector<std::string> StringTools::Split(const std::string& str, const std::string& seperator) {
     std::vector<std::string> toRet;
-    
     // Quick-accept: str length is 0
     if (str.length() == 0)
       toRet.push_back("");
@@ -131,4 +130,26 @@ std::vector<std::string> StringTools::Split(const std::string& str, const std::s
     }
 
     return toRet;
+}
+
+std::string StringTools::PadLeft(const std::string& str, const char pad, const std::size_t len) {
+  std::stringstream ss;
+
+  for (std::size_t i = str.length(); i < len; i++)
+    ss << pad;
+
+  ss << str;
+
+  return ss.str();
+}
+
+std::string StringTools::PadRight(const std::string& str, const char pad, const std::size_t len) {
+  std::stringstream ss;
+
+  ss << str;
+
+  for (std::size_t i = str.length(); i < len; i++)
+    ss << pad;
+
+  return ss.str();
 }
