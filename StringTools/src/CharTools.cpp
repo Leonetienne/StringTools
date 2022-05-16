@@ -1,4 +1,4 @@
-#include "CharTools.h"
+#include "StringTools/CharTools.h"
 #include <algorithm>
 
 bool CharTools::IsVowel(const char c, const std::string &vowels) {
