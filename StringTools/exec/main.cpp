@@ -1,6 +1,8 @@
 #include <iostream>
 #include <StringTools/StringTools.h>
 
+using namespace Leonetienne::StringTools;
+
 int main()
 {
     std::vector<std::string> foo =

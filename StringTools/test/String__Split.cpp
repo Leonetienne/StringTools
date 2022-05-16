@@ -1,6 +1,9 @@
 #include <StringTools/StringTools.h>
 #include "Catch2.h"
 
+using namespace Leonetienne::StringTools;
+
+
 // Tests that splitting an empty string always returns {""}
 TEST_CASE(__FILE__"/EmptyString", "[Strings][Split]")
 {

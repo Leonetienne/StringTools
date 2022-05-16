@@ -1,6 +1,9 @@
 #include <StringTools/CharTools.h>
 #include "Catch2.h"
 
+using namespace Leonetienne::StringTools;
+
+
 // Tests character letter-ness by checking it against a map
 TEST_CASE(__FILE__"/MapTest", "[Char][IsLetter]")
 {

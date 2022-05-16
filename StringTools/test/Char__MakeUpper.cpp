@@ -1,6 +1,9 @@
 #include <StringTools/CharTools.h>
 #include "Catch2.h"
 
+using namespace Leonetienne::StringTools;
+
+
 TEST_CASE(__FILE__"/LowerToUpper_NoSymbols", "[Char][MakeUpper]")
 {
     // Setup

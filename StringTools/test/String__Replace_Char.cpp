@@ -1,6 +1,9 @@
 #include <StringTools/StringTools.h>
 #include "Catch2.h"
 
+using namespace Leonetienne::StringTools;
+
+
 // Tests that replacing something in an empty string returns an empty string
 TEST_CASE(__FILE__"/EmptyString", "[Strings][ReplaceChar]")
 {

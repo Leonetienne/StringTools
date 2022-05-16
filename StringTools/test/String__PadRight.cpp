@@ -1,6 +1,9 @@
 #include <StringTools/StringTools.h>
 #include "Catch2.h"
 
+using namespace Leonetienne::StringTools;
+
+
 // Tests that padding to a length shorter adds no padding 
 TEST_CASE(__FILE__"/PadToShorterLength", "[Strings][PadRight]")
 {
