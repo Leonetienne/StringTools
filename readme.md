@@ -1,4 +1,4 @@
-# Just a simple string manupulation library
+# Just a simple string manipulation library
 
 This really is nothing special.  
 The only reason for this repository being public is that a few of my more noteworthy projects depend on it as a git submodule.
