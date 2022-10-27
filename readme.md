@@ -1,3 +1,5 @@
+[![Build Status](https://drone.leonetienne.de/api/badges/leonetienne/StringTools/status.svg)](https://drone.leonetienne.de/leonetienne/StringTools)
+
 # Just a simple string manipulation library
 
 This really is nothing special.  
